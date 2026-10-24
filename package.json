@@ -1,0 +1,30 @@
+{
+  "name": "medpulse-clinical-ai",
+  "version": "1.0.0",
+  "description": "MedPulse Clinical AI System - Production-Grade Enterprise Symptoms Analysis & AI-Assisted Triage Platform",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently -n \"FASTAPI,EXPRESS,REACT\" -c \"yellow,blue,cyan\" \"npm run ml\" \"npm run server\" \"npm run client\"",
+    "client": "npm --prefix client run dev",
+    "server": "npm --prefix server run dev",
+    "ml": "python ml-service/main.py",
+    "train": "python ml-service/train.py",
+    "seed": "npm --prefix server run seed",
+    "build": "npm --prefix server run build && npm --prefix client run build"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "keywords": [
+    "healthcare",
+    "clinical-triage",
+    "symptoms-analysis",
+    "disease-prediction",
+    "fastapi",
+    "express",
+    "react",
+    "mern"
+  ],
+  "author": "MedPulse Clinical AI Team",
+  "license": "MIT"
+}
